@@ -1,0 +1,17 @@
+yarn global add vue-cli
+
+vue init webpack-simple front_end
+
+
+
+yarn install
+
+yarn run dev
+
+
+
+yarn add vuex
+
+
+
+
