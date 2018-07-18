@@ -1,16 +1,33 @@
-yarn global add vue-cli
 
-vue init webpack-simple front_end
-
-
-
-yarn install
-
-yarn run dev
+yarn
+webpack
+vue
+vuex
 
 
 
-yarn add vuex
+commands:
+
+  yarn global add vue-cli
+
+  vue init webpack-simple front_end
+
+  yarn install
+
+  yarn run dev
+
+  yarn add vuex
+
+
+vue:
+
+  data
+  methods
+  mounted
+  computed
+  props
+
+
 
 
 
