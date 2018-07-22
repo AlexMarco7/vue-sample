@@ -1,6 +1,6 @@
 <template lang="pug">
   .product_list
-    
+    p product list
 </template>
 
 <script>

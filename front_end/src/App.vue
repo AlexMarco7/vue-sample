@@ -1,8 +1,8 @@
 <template lang="pug">
   #app
-    login-layout(v-if="$route.name == 'login'")
+    full-page-layout(v-if="$route.layout == 'full'")
       router-view(slot="content")
-    page-layout(v-if="$route.name != 'login'")
+    main-page-layout(v-if="!$route.layout || $route.layout == 'main'")
       router-view(slot="header" name="header")
       router-view(slot="side_bar" name="side_bar")
       router-view(slot="content")
@@ -10,19 +10,26 @@
 
 <script>
 
-import PageLayout from "./modules/common/view/layouts/PageLayout.vue"
-import LoginLayout from "./modules/common/view/layouts/LoginLayout.vue"
+import MainPageLayout from "./modules/common/view/layouts/MainPageLayout.vue"
+import FullPageLayout from "./modules/common/view/layouts/FullPageLayout.vue"
+
+import commonStore from './modules/common/store'
+import productStore from './modules/product/store'
 
 export default {
   name: 'app',
   components:{
-    PageLayout,
-    LoginLayout
+    MainPageLayout,
+    FullPageLayout
   },
   data () {
     return {
 
     }
+  },
+  created () {
+    this.$store.registerModule("common", commonStore);
+    this.$store.registerModule("product", productStore);
   }
 }
 </script>

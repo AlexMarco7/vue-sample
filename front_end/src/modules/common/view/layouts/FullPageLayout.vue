@@ -1,5 +1,5 @@
 <template lang="pug">
-  .login_layout
+  .full_page_layout
     slot(name="content")
       
     
@@ -8,7 +8,7 @@
 <script>
 
 export default {
-  name: 'page-layout',
+  name: 'full-page-layout',
   data () {
     return {
       
@@ -18,7 +18,7 @@ export default {
 </script>
 
 <style lang="scss">
-.page_layout{
+.full_page_layout{
   
 }
 </style>

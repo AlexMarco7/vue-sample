@@ -47,7 +47,8 @@ module.exports = {
               'vue-style-loader',
               'css-loader',
               'sass-loader?indentedSyntax'
-            ]
+            ],
+            'i18n': '@kazupon/vue-i18n-loader'
           }
           // other vue-loader options go here
         }

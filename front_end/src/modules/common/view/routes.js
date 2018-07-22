@@ -10,6 +10,7 @@ export default [
   { 
     path: '/login',
     name : "login",
+    layout : "full",
     components: { 
       default: LoginPage 
     }

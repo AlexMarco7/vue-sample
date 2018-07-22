@@ -1,5 +1,5 @@
 <template lang="pug">
-  .page_layout
+  .main_page_layout
     .header_wrap
       slot(name="header")
         header
@@ -17,7 +17,7 @@ import Header from "../partials/Header.vue"
 import SideBar from "../partials/SideBar.vue"
 
 export default {
-  name: 'page-layout',
+  name: 'main-page-layout',
   components: {
     Header,
     SideBar
@@ -31,7 +31,7 @@ export default {
 </script>
 
 <style lang="scss">
-.page_layout{
+.main_page_layout{
   
 }
 </style>
