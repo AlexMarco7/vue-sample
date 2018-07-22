@@ -16,18 +16,17 @@ Vue.use(VueRouter);
 
 const routes = []
   .concat(commonRoutes)
-  .concat()
+  .concat(productRoutes)
 
 const router = new VueRouter({
   routes 
 })
 
 let vue = new Vue({
-  el: '#app',
   store: new Vuex.Store({}),
-  router,
+  router: router,
   render: h => h(App)
-})
+}).$mount("#app")
 
 vue.$store.registerModule("common", commonStore);
 vue.$store.registerModule("product", productStore);

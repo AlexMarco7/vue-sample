@@ -1,14 +1,20 @@
 <template lang="pug">
   #app
-    router-view(name="header")
-    router-view(name="side_bar")
-    router-view(name="content")
+    page-layout
+      router-view(slot="header" name="header")
+      router-view(slot="side_bar" name="side_bar")
+      router-view(slot="content")
 </template>
 
 <script>
 
+import PageLayout from "./modules/common/view/layouts/PageLayout.vue"
+
 export default {
   name: 'app',
+  components:{
+    PageLayout
+  },
   data () {
     return {
 

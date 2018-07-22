@@ -6,7 +6,7 @@ export default [
     path: '/product',
     name : "product",
     components: { 
-      content: ProductPage 
+      default: ProductPage 
     }
   }
 ]
