@@ -1,8 +1,17 @@
 
+import LoginPage from "./pages/LoginPage.vue"
+
 export default [
   { 
     path: '/',
     name : "main",
-    redirect: "product" 
+    redirect: "login" 
+  },
+  { 
+    path: '/login',
+    name : "login",
+    components: { 
+      default: LoginPage 
+    }
   }
 ]

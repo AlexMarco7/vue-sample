@@ -1,9 +1,11 @@
 <template lang="pug">
   .page_layout
-    header
+    .header_wrap
       slot(name="header")
+        header
     .side_base_wrap
       slot(name="side_base")
+        side-bar
     .content_wrap
       slot(name="content")
       
@@ -11,11 +13,15 @@
 </template>
 
 <script>
+import Header from "../partials/Header.vue"
+import SideBar from "../partials/SideBar.vue"
+
 export default {
   name: 'page-layout',
   data () {
     return {
-      
+      Header,
+      SideBar
     }
   }
 }
