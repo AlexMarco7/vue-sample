@@ -26,7 +26,8 @@ const router = new VueRouter({
   routes
 })
 
-let lang = window.localStorage ? (window.localStorage.lang || "en-US") : 'en-US';
+let lang = ((window.localStorage || {}).lang) || navigator.language || navigator.userLanguage || "en-US";
+
 const i18n = new VueI18n({
     locale: lang,
     messages: {
