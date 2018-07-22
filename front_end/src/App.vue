@@ -1,6 +1,8 @@
 <template lang="pug">
   #app
-    p {{msg}}
+    router-view(name="header")
+    router-view(name="side_bar")
+    router-view(name="content")
 </template>
 
 <script>
@@ -9,10 +11,8 @@ export default {
   name: 'app',
   data () {
     return {
-      msg: 'Teste'
+
     }
-  },
-  created () {
   }
 }
 </script>

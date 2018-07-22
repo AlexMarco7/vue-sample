@@ -1,11 +1,11 @@
 <template lang="pug">
-  .partial_name
+  .product_list
     
 </template>
 
 <script>
 export default {
-  name: 'partial-name',
+  name: 'product-list',
   data () {
     return {
       
@@ -15,7 +15,7 @@ export default {
 </script>
 
 <style lang="scss">
-.partial_name{
+.product_list{
   
 }
 </style>

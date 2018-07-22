@@ -1,11 +1,11 @@
 <template lang="pug">
-  .page_name
-    
+  .product_page
+    p ProductPage
 </template>
 
 <script>
 export default {
-  name: 'page-name',
+  name: 'product-page',
   data () {
     return {
       
@@ -15,7 +15,7 @@ export default {
 </script>
 
 <style lang="scss">
-.page_name{
+.product_page{
   
 }
 </style>

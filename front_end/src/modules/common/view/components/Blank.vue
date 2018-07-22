@@ -1,11 +1,11 @@
 <template lang="pug">
-  .partial_name
+  .blank
     
 </template>
 
 <script>
 export default {
-  name: 'partial-name',
+  name: 'blank',
   data () {
     return {
       
@@ -15,7 +15,7 @@ export default {
 </script>
 
 <style lang="scss">
-.partial_name{
+.blank{
   
 }
 </style>
