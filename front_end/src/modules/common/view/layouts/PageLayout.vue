@@ -18,10 +18,13 @@ import SideBar from "../partials/SideBar.vue"
 
 export default {
   name: 'page-layout',
+  components: {
+    Header,
+    SideBar
+  },
   data () {
     return {
-      Header,
-      SideBar
+      
     }
   }
 }
