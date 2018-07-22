@@ -1,6 +1,8 @@
 <template lang="pug">
   #app
-    page-layout
+    login-layout(v-if="$route.name == 'login'")
+      router-view(slot="content")
+    page-layout(v-if="$route.name != 'login'")
       router-view(slot="header" name="header")
       router-view(slot="side_bar" name="side_bar")
       router-view(slot="content")
@@ -9,11 +11,13 @@
 <script>
 
 import PageLayout from "./modules/common/view/layouts/PageLayout.vue"
+import LoginLayout from "./modules/common/view/layouts/LoginLayout.vue"
 
 export default {
   name: 'app',
   components:{
-    PageLayout
+    PageLayout,
+    LoginLayout
   },
   data () {
     return {

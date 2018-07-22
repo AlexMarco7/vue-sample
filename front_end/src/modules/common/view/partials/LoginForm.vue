@@ -1,6 +1,6 @@
 <template lang="pug">
   .login_form
-    
+    p login form
 </template>
 
 <script>

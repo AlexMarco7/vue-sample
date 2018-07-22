@@ -1,6 +1,6 @@
 <template lang="pug">
   .login_page
-    p login
+    login-form
 </template>
 
 <script>
@@ -9,6 +9,9 @@ import LoginForm from "../partials/LoginForm.vue"
 
 export default {
   name: 'login-page',
+  components:{
+    LoginForm
+  },
   data () {
     return {
       
