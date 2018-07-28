@@ -3,7 +3,7 @@ import api from "../api/api.js"
 
 export default {
 
-    listProducts(context){debugger
+    listProducts(context){
         return api.listProducts(context.state.productFilter, context.state.productLimitPerPage, (context.state.productCurrentPage-1) *  context.state.productLimitPerPage)
         .then((result)=>{
             context.commit("setProductList", result.list)
