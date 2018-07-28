@@ -56,7 +56,6 @@ export default {
     }
   },
   mounted(){
-    debugger
     this.goToFirstPage()
   },
   methods:{
