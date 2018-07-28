@@ -1,14 +1,11 @@
 <template lang="pug">
-  .full_page_layout
-    slot(name="content")
-      
+  .nav_bar
     
 </template>
 
 <script>
-
 export default {
-  name: 'full-page-layout',
+  name: 'nav-bar',
   data () {
     return {
       
@@ -18,7 +15,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.full_page_layout{
-  
+.nav_bar{
+  background-color: #ff694b;
+  position: absolute;
+  display: flex;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 </style>

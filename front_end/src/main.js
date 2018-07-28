@@ -1,22 +1,24 @@
 
 import Vue from 'vue'
-import App from './App.vue'
-import Vuex from 'vuex';
-import VueRouter from 'vue-router';
-import VueResource from "vue-resource"
-import VueI18n from 'vue-i18n';
 
-import enUS from './i18n/en-US.json'
-import ptBR from './i18n/pt-BR.json'
+
+/*Font Awesome ====================================================*/
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+Vue.component('font-awesome-icon', FontAwesomeIcon)
+
+import icons from './modules/common/view/icons.js'
+
+
+
+
+/*Vue Router ====================================================*/
+import VueRouter from 'vue-router';
 
 import commonRoutes from './modules/common/view/routes.js'
 import productRoutes from './modules/product/view/routes.js'
 
-Vue.use(Vuex);
 Vue.use(VueRouter);
-Vue.use(VueResource);
-Vue.use(VueI18n);
-
 
 const routes = []
   .concat(commonRoutes)
@@ -25,6 +27,17 @@ const routes = []
 const router = new VueRouter({
   routes
 })
+
+
+
+/*i18n ====================================================*/
+
+import VueI18n from 'vue-i18n';
+
+import enUS from './i18n/en-US.json'
+import ptBR from './i18n/pt-BR.json'
+
+Vue.use(VueI18n);
 
 let lang = ((window.localStorage || {}).lang) || navigator.language || navigator.userLanguage || "en-US";
 
@@ -36,11 +49,29 @@ const i18n = new VueI18n({
     }
 })
 
+
+/*Bootstrap ====================================================*/
+import BootstrapVue from 'bootstrap-vue'
+import BootstrapCss from 'bootstrap/scss/bootstrap.scss'
+
+Vue.use(BootstrapVue);
+
+
+
+/*Launch Vue ====================================================*/
+import App from './App.vue'
+import Vuex from 'vuex';
+import VueResource from "vue-resource"
+
+Vue.use(Vuex);
+Vue.use(VueResource);
+
 let vue = new Vue({
   store: new Vuex.Store({ strict: true }),
   router: router,
   i18n: i18n,
   render: h => h(App)
 }).$mount("#app")
+
 
 

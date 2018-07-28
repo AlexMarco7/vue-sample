@@ -1,16 +1,19 @@
 <template lang="pug">
   .product_page
+    product-filter
     product-list
 </template>
 
 <script>
 
 import ProductList from "../partials/ProductList.vue"
+import ProductFilter from "../partials/ProductFilter.vue"
 
 export default {
   name: 'product-page',
   components:{
-   ProductList
+   ProductList,
+   ProductFilter
   },
   data () {
     return {
@@ -20,7 +23,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .product_page{
   
 }

@@ -10,7 +10,7 @@
 </i18n>
 
 
-<template lang="pug">
+<template lang="pug" >
   .login_form
     input(type="text" v-model="email")
     input(type="password" v-model="password")
@@ -56,7 +56,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .login_form{
   
 }

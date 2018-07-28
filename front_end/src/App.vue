@@ -1,9 +1,9 @@
 <template lang="pug">
   #app
-    full-page-layout(v-if="$route.layout == 'full'")
+    full-page-layout(v-if="$router.currentRoute.meta.layout == 'full'")
       router-view(slot="content")
-    main-page-layout(v-if="!$route.layout || $route.layout == 'main'")
-      router-view(slot="header" name="header")
+    main-page-layout(v-if="!$router.currentRoute.meta.layout || $router.currentRoute.meta.layout == 'main'")
+      router-view(slot="nav_bar" name="nav_bar")
       router-view(slot="side_bar" name="side_bar")
       router-view(slot="content")
 </template>
@@ -30,6 +30,9 @@ export default {
   created () {
     this.$store.registerModule("common", commonStore);
     this.$store.registerModule("product", productStore);
+  },
+  mounted(){
+
   }
 }
 </script>
@@ -37,11 +40,18 @@ export default {
 <style lang="scss">
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  font-family: "Open Sans",sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #333;
+
+
+  position: absolute;
+  display: flex;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 </style>

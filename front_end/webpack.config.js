@@ -1,11 +1,14 @@
 var path = require('path')
 var webpack = require('webpack')
 
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
+    publicPath: '/',
     filename: 'build.js'
   },
   module: {
@@ -64,6 +67,17 @@ module.exports = {
         options: {
           name: '[name].[ext]?[hash]'
         }
+      },
+      {
+        test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'fonts/',    // where the fonts will go
+            publicPath: '../'       // override the default path
+          }
+        }]
       }
     ]
   },
@@ -81,7 +95,32 @@ module.exports = {
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map'
+  devtool: '#eval-source-map',
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'index.ejs'
+    })
+  ]
+}
+
+if(process.env.NODE_ENV === 'analyze') {
+  module.exports.plugins = (module.exports.plugins || []).concat([
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: '"production"'
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      sourceMap: true,
+      compress: {
+        warnings: false
+      }
+    }),
+    new webpack.LoaderOptionsPlugin({
+      minimize: true
+    }),
+    new BundleAnalyzerPlugin()
+  ])
 }
 
 if (process.env.NODE_ENV === 'production') {
